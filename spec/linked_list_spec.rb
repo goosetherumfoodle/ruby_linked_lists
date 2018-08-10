@@ -59,7 +59,7 @@ RSpec.describe LinkedList do
     it 'reverses the values in the list' do
       list = LinkedList.build(1, 2, 3)
 
-      reversed = list.reverse
+      reversed = list.reverse!
       value_1 = reversed.value
       value_2 = reversed.next_node.value
       value_3 = reversed.next_node.next_node.value
@@ -69,7 +69,7 @@ RSpec.describe LinkedList do
       expect(value_3).to eq(1)
     end
 
-    it 'does not destroy the node objects' do
+    it 'preserves the nodes' do
       list = LinkedList.build(1, 2, 3)
 
       node_1 = list
